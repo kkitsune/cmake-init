@@ -100,7 +100,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU" OR "${CMAKE_CXX_COMPILER_ID}" MATCH
         -Wmissing-braces
         -Wreturn-type
         -Wswitch
-        -Wswitch-default
+        #-Wswitch-default
         -Wuninitialized
         -Wmissing-field-initializers
         
