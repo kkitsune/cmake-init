@@ -12,19 +12,21 @@ endif()
 # Output packages
 # 
 
+set(OPTION_PACK_GENERATOR "ZIP" CACHE STRING "Package targets")
+
 if("${CMAKE_SYSTEM_NAME}" MATCHES "Windows")
     # Windows installer
-    set(OPTION_PACK_GENERATOR "NSIS;ZIP" CACHE STRING "Package targets")
+    #set(OPTION_PACK_GENERATOR "NSIS;ZIP" CACHE STRING "Package targets")
     set(PACK_COMPONENT_INSTALL ON)
     set(PACK_INCLUDE_TOPDIR OFF)
 elseif(UNIX AND SYSTEM_DIR_INSTALL)
     # System installation packages for unix systems
     if("${CMAKE_SYSTEM_NAME}" MATCHES "Linux")
-        set(OPTION_PACK_GENERATOR "TGZ;DEB;RPM" CACHE STRING "Package targets")
+        #set(OPTION_PACK_GENERATOR "TGZ;DEB;RPM" CACHE STRING "Package targets")
         set(PACK_COMPONENT_INSTALL ON)
         set(PACK_INCLUDE_TOPDIR OFF)
     else()
-        set(OPTION_PACK_GENERATOR "TGZ" CACHE STRING "Package targets")
+        #set(OPTION_PACK_GENERATOR "TGZ" CACHE STRING "Package targets")
         set(PACK_COMPONENT_INSTALL OFF)
         set(PACK_INCLUDE_TOPDIR OFF)
     endif()
@@ -37,7 +39,7 @@ elseif(UNIX AND SYSTEM_DIR_INSTALL)
 #   set(PACK_INCLUDE_TOPDIR ON)
 else()
     # Default (portable package for any platform)
-    set(OPTION_PACK_GENERATOR "ZIP;TGZ" CACHE STRING "Package targets")
+    #set(OPTION_PACK_GENERATOR "ZIP;TGZ" CACHE STRING "Package targets")
     set(PACK_COMPONENT_INSTALL OFF)
     set(PACK_INCLUDE_TOPDIR ON)
 endif()
